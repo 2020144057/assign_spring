@@ -27,7 +27,7 @@ public class BeerController {
     }
 
     @GetMapping(value = "beers")
-    public ArrayList<Beer> getBeers(@RequestParam(required = false) String type, @RequestParam(required = false) int count, Model model) {
+    public ArrayList<Beer> getBeers(@RequestParam(required = false) String type, @RequestParam(required = false) Integer count, Model model) {
         ArrayList<Beer> beers = (ArrayList<Beer>) beerRepository.findAll();
         return beers;
     }
