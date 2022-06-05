@@ -1,6 +1,8 @@
 package com.example.spring.controller;
 
-import com.example.spring.domain.Beer;
+import com.example.spring.Entity.Beer;
+import com.example.spring.repository.BeerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,20 +13,22 @@ import java.util.ArrayList;
 @RestController
 public class BeerController {
 
+    BeerRepository beerRepository;
+
+    @Autowired
+    BeerController(BeerRepository beerRepository) {
+        this.beerRepository = beerRepository;
+    }
+
     @GetMapping(value = "beer")
     public Beer getBeerByName(@RequestParam String name, Model model) {
-        Beer beer = new Beer(name, "rate", "des", "image", "link");
+        Beer beer = (Beer) beerRepository.getBeerByName(name);
         return beer;
     }
+
     @GetMapping(value = "beers")
-    public ArrayList<Beer> getBeers(@RequestParam(required = false) String type, Model model) {
-        ArrayList<Beer> beers = new ArrayList<>();
-        Beer beer = new Beer("name", "rate", "des", "image", "link");
-        beers.add(beer);
-        beers.add(beer);
-        beers.add(beer);
-        beers.add(beer);
-        beers.add(beer);
+    public ArrayList<Beer> getBeers(@RequestParam(required = false) String type, @RequestParam(required = false) int count, Model model) {
+        ArrayList<Beer> beers = (ArrayList<Beer>) beerRepository.findAll();
         return beers;
     }
 }
