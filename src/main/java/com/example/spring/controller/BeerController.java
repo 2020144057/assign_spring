@@ -25,6 +25,11 @@ public class BeerController {
         Beer beer = (Beer) beerRepository.getBeerByName(name);
         return beer;
     }
+    @GetMapping(value = "beer/id")
+    public Beer getBeerById(@RequestParam Integer id, Model model) {
+        Beer beer = (Beer) beerRepository.getBeerById(id);
+        return beer;
+    }
 
     @GetMapping(value = "beers")
     public ArrayList<Beer> getBeers(@RequestParam(required = false) String type, @RequestParam(required = false) Integer count, Model model) {

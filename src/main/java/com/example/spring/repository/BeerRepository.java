@@ -7,6 +7,7 @@ import java.util.List;
 
 @Repository
 public interface BeerRepository extends JpaRepository<Beer, Long> {
+    List<Beer> getBeerById(Integer id);
     List<Beer> getBeerByName(String name);
     List<Beer> findAll();
 }
