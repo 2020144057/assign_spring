@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Gradle Test Executor 1" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-06-05T12:55:20" hostname="DESKTOP-LSRAN8V" time="0.19">
+<testsuite name="Gradle Test Executor 1" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-06-14T14:23:12" hostname="DESKTOP-LSRAN8V" time="0.216">
   <properties/>
-  <testcase name="failed to execute tests" classname="Gradle Test Executor 1" time="0.19">
+  <testcase name="failed to execute tests" classname="Gradle Test Executor 1" time="0.216">
     <failure message="org.gradle.api.internal.tasks.testing.TestSuiteExecutionException: Could not execute test class 'com.example.spring.ApplicationTests'." type="org.gradle.api.internal.tasks.testing.TestSuiteExecutionException">org.gradle.api.internal.tasks.testing.TestSuiteExecutionException: Could not execute test class 'com.example.spring.ApplicationTests'.
 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:53)
 	at java.base@15.0.2/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
